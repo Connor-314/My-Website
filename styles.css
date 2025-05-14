@@ -85,10 +85,18 @@ a:hover {
     border-radius: 10px;
 }
 
-.skill img, .portfolio-item img {
+.skill img {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
+}
+
+.portfolio-item img {
+    width: 100%; /* Make the image take up the full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Add curved corners */
+    border: 5px solid #f4d03f; /* Add a border with the desired color */
+    object-fit: cover; /* Ensure the image fits nicely within its container */
 }
 
 .experience-item {
@@ -105,4 +113,29 @@ a:hover {
     padding: 20px 0;
     background-color: #2a2a3b;
     color: #cccccc;
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f4d03f;
 }
