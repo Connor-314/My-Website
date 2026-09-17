@@ -91,12 +91,52 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.portfolio-item {
+    /* Make the entire project card feel like an interactive link. */
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s ease,
+        border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus-visible {
+    /* Gold border with a blue outer glow to match the site's color palette. */
+    transform: translateY(-8px);
+    background-color: #3d3d55;
+    border-color: #f4d03f;
+    box-shadow: 0 0 12px rgba(244, 208, 63, 0.8),
+        0 0 28px rgba(52, 152, 219, 0.65),
+        0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-item:hover {
+    text-decoration: none;
+}
+
+.portfolio-item:focus-visible {
+    outline: 3px solid #3498db;
+    outline-offset: 4px;
+}
+
 .portfolio-item img {
     width: 100%; /* Make the image take up the full width of its container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 15px; /* Add curved corners */
     border: 5px solid #f4d03f; /* Add a border with the desired color */
     object-fit: cover; /* Ensure the image fits nicely within its container */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-item {
+        transition: none;
+    }
+
+    .portfolio-item:hover,
+    .portfolio-item:focus-visible {
+        transform: none;
+    }
 }
 
 .experience-item {
